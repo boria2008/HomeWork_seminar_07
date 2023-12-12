@@ -18,7 +18,7 @@ int[] CreateArray(int size, int minInt, int maxInt)
 }
 
 
-void PrintArray(int i, int[] arr)
+void PrintArrayBackwards(int i, int[] arr)
 {
     if (i == 0)
     {
@@ -26,12 +26,12 @@ void PrintArray(int i, int[] arr)
         return;
     }
     Console.Write($"{arr[i]}, ");
-    PrintArray(i - 1, arr);
+    PrintArrayBackwards(i - 1, arr);
 }
 
 int[] arr = CreateArray(5, -10, 10);
 Console.WriteLine($"Array before:[{string.Join(", ", arr)}]");
 int i = arr.Length - 1;
 Console.Write("Array after:[");
-PrintArray(i, arr);
+PrintArrayBackwards(i, arr);
 Console.Write("]");
